@@ -272,6 +272,22 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
 @media(max-width:560px){.cta-qr{flex-direction:column;text-align:center;padding:18px;gap:12px;}}
 .hero-tagline{position:relative;text-align:center;font-size:13px;color:rgba(11,37,69,.82);letter-spacing:.05em;font-weight:500;}
 .hero-tagline b{color:#1A7A6A;font-weight:600;}
+.newsletter{background:var(--cream);}
+.nl-card{max-width:640px;margin:0 auto;text-align:center;background:var(--cream-l);border:1px solid rgba(11,37,69,.1);border-radius:18px;padding:50px 44px;box-shadow:0 22px 54px rgba(11,37,69,.07);}
+.nl-eyebrow{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--teal);margin-bottom:14px;}
+.nl-title{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--navy);margin-bottom:14px;letter-spacing:-.01em;line-height:1.2;}
+.nl-desc{font-size:14.5px;line-height:1.85;color:var(--navy-82);max-width:480px;margin:0 auto 28px;}
+.nl-form{display:flex;gap:10px;max-width:440px;margin:0 auto;}
+.nl-input{flex:1;min-width:0;padding:14px 18px;border:1px solid rgba(11,37,69,.2);border-radius:8px;font-size:14px;font-family:inherit;color:var(--navy);background:#fff;outline:none;transition:border-color .2s;}
+.nl-input::placeholder{color:rgba(11,37,69,.4);}
+.nl-input:focus{border-color:var(--teal);}
+.nl-btn{white-space:nowrap;background:var(--teal);color:#fff;border:none;font-weight:700;font-size:14px;padding:14px 26px;border-radius:8px;cursor:pointer;transition:transform .2s,box-shadow .2s;box-shadow:0 8px 22px rgba(11,37,69,.18);}
+.nl-btn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(11,37,69,.26);}
+.nl-done{display:none;font-size:15px;color:var(--navy);font-weight:600;padding:6px 0;}
+.nl-note{margin-top:20px;font-size:13px;color:var(--navy-55);}
+.nl-note a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(26,122,106,.4);}
+@media(max-width:560px){.nl-card{padding:38px 24px;}.nl-form{flex-direction:column;}.nl-title{font-size:25px;}}
+.foot-eco-soon{display:block;font-size:13px;color:rgba(255,255,255,.42);margin-bottom:9px;}
 </style>
 </head>
 <body>
@@ -708,13 +724,28 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
   </div>
 </section>
 
+<!-- NEWSLETTER -->
+<section class="newsletter"><div class="wrap">
+  <div class="nl-card">
+    <div class="nl-eyebrow">LYVON NEWSLETTER</div>
+    <h2 class="nl-title" data-i18n="nlTitle">LYVON 뉴스레터</h2>
+    <p class="nl-desc" data-i18n="nlDesc">프리메드 영어와 의대 입시 준비 팁·가이드·인사이트를 정기적으로 받아보세요.</p>
+    <div class="nl-form" id="nlForm">
+      <input type="email" id="nlEmail" class="nl-input" placeholder="you@email.com" aria-label="email">
+      <button type="button" class="nl-btn" onclick="lyvonSubscribe()" data-i18n="nlBtn">구독하기 →</button>
+    </div>
+    <div class="nl-done" id="nlDone" data-i18n="nlDone">메일 앱이 열렸습니다 — 전송하시면 구독이 완료됩니다.</div>
+    <div class="nl-note" data-i18n="nlNote">궁금한 점이 있으신가요? <a href="mailto:hello@lyvon.io">편하게 문의 주세요</a></div>
+  </div>
+</div></section>
+
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand"><div class="mark">Med<b>Bridge</b></div><p data-i18n="footBrandP">Your Bridge to Medical School. 의학 영어를 말하게 만드는 LYVON Medical의 커뮤니케이션 기초 과정입니다.</p>
         <p style="font-size:12.5px;margin-top:14px;line-height:1.8;">Contact:&nbsp;<a href="mailto:hello@medbridgeedu.io" style="color:var(--teal-dark);text-decoration:none;font-weight:700;">hello@medbridgeedu.io</a></p></div>
       <div class="foot-col"><h5>CURRICULUM</h5><a href="#curriculum" data-i18n="fc1a1">30개 토픽 · 3 세트</a><a href="#pathway" data-i18n="fc1a2">LYVON 학습 경로</a><a href="#top" data-i18n="fc1a3">세션 구조</a></div>
-      <div class="foot-col"><h5>LYVON ECOSYSTEM</h5><a href="https://lyvon.io" data-i18n="fc2a1">LYVON (시스템 허브)</a><a href="https://medpathglobal.io?utm_source=medbridge&utm_medium=footer" data-i18n="fc2a2">MedPath (입시 시스템)</a></div>
+      <div class="foot-col"><h5>LYVON ECOSYSTEM</h5><a href="https://lyvon.io" data-i18n="ecoLY">LYVON (시스템 허브)</a><a href="#top" data-i18n="ecoMB">MedBridge (커뮤니케이션 기초)</a><a href="https://medpathglobal.io?utm_source=medbridge&utm_medium=footer" data-i18n="ecoMP">MedPath (입시 심화)</a><span class="foot-eco-soon" data-i18n="ecoMC">MedConnect (멤버십)</span></div>
       <div class="foot-col"><h5>CONTACT</h5><a href="https://open.kakao.com/o/sh3TzOsi" target="_blank" rel="noopener" data-i18n="fc3a1">카카오톡 상담</a><a href="https://docs.google.com/forms/d/e/1FAIpQLScrFb1WOfgQ02_P_LHLHajRiiI6M7aFgCYo7dc1c6TcsnRLnQ/viewform" target="_blank" rel="noopener" data-i18n="fc3a2">무료 체험 신청</a></div>
     </div>
     <div class="foot-bottom">
@@ -725,7 +756,7 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
 </footer>
 
 <script>
-const I18N={en:{heroStd:`A <b>new standard</b> for pre-med English.`,heroProof:`<span style="color:#1A7A6A;font-weight:700;">✓</span> <b style="color:#0B2545;font-weight:600;">Students accepted in 2025 &amp; 2026</b> <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 2027 cohort enrolled <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 32 students to date, small-group (since Dec 2024)`,whyCap:`Every path begins with a solid foundation.`,dgPrep:`Preparation`,dgTrain:`Session training`,dgAnalyze:`LLR analysis`,dgImprove:`Optimization`,dgCenter:`Every session`,cycCap:`Four phases repeated every session — students never stay in place; each round goes one step deeper.`,llrLabel:`LLR · 5 Analysis Areas`,philoQuote:`&ldquo;Never stop learning, connect people, and create lasting value.&rdquo;`,qrCapT:`KakaoTalk consultation`,qrCapS:`Scan the QR to connect instantly`,
+const I18N={en:{nlTitle:`The LYVON Newsletter`,nlDesc:`Sign up to get regular pre-med English and admissions tips, guides, and insights delivered straight to your inbox.`,nlBtn:`Subscribe →`,nlNote:`Got a question about us? <a href="mailto:hello@lyvon.io">Send us a quick note</a>`,nlDone:`Your mail app just opened — send the email to complete your sign-up.`,ecoLY:`LYVON (system hub)`,ecoMB:`MedBridge (communication foundation)`,ecoMP:`MedPath (admissions track)`,ecoMC:`MedConnect (membership)`,heroStd:`A <b>new standard</b> for pre-med English.`,heroProof:`<span style="color:#1A7A6A;font-weight:700;">✓</span> <b style="color:#0B2545;font-weight:600;">Students accepted in 2025 &amp; 2026</b> <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 2027 cohort enrolled <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 32 students to date, small-group (since Dec 2024)`,whyCap:`Every path begins with a solid foundation.`,dgPrep:`Preparation`,dgTrain:`Session training`,dgAnalyze:`LLR analysis`,dgImprove:`Optimization`,dgCenter:`Every session`,cycCap:`Four phases repeated every session — students never stay in place; each round goes one step deeper.`,llrLabel:`LLR · 5 Analysis Areas`,philoQuote:`&ldquo;Never stop learning, connect people, and create lasting value.&rdquo;`,qrCapT:`KakaoTalk consultation`,qrCapS:`Scan the QR to connect instantly`,
 navCta:`Kakao consultation`,
 heroKr:`Speaking English for pre-med students<br><b>MedBridge 101 · A complete 30-topic curriculum</b>`,
 heroLead:`MedBridge 101 is the <b>communication foundation stage</b> of the LYVON pathway. Across 30 topics, students don't memorize medicine in English — they learn <b>how to speak it</b>. Every topic runs on a fixed 50-minute flow and is paired with one <b>real medical-school interview question</b>.`,
@@ -808,7 +839,7 @@ fc1a1:`30 topics · 3 sets`, fc1a2:`The LYVON pathway`, fc1a3:`Session structure
 fc2a1:`LYVON (system hub)`, fc2a2:`MedPath (admission system)`,
 fc3a1:`KakaoTalk consultation`, fc3a2:`Free trial application`,
 footPrivacy:`Privacy Policy`, footTerms:`Terms of Service`,
-tp01:`<b>Eco-anxiety</b>`,q01:`Why do you want to study medicine?`,tp02:`<b>Seafood &amp; 'Forever Chemicals'</b>`,q02:`What led you to apply to a pre-med program?`,tp03:`<b>New Nasal Spray for Allergic Reactions</b>`,q03:`What experience influenced your choice to pursue medicine?`,tp04:`<b>Third State Beyond Life and Death</b>`,q04:`As a doctor, what difference do you think you can make in people's lives?`,tp05:`<b>Eye Colour Change Surgery</b>`,q05:`What is the most important quality of a good doctor?`,tp06:`<b>Deadly Mpox Virus Spreads</b>`,q06:`What part of medicine are you most passionate about?`,tp07:`<b>Cycling Is Good for Your Knees</b>`,q07:`How do you plan to contribute to the medical field?`,tp08:`<b>Men Sleep Better Than Women</b>`,q08:`How would you explain your motivation to work in healthcare?`,tp09:`<b>Nature Reduces Anxiety</b>`,q09:`How do you overcome difficult academic situations?`,tp10:`<b>Standing on One Leg &amp; Ageing</b>`,q10:`How do you manage your time systematically under a heavy workload?`,tp11:`<b>Weight Loss</b>`,q11:`Tell me about a tough academic challenge you overcame.`,tp12:`<b>Cold Weather Exercise</b>`,q12:`Why are biology, chemistry and physics important for a medical career?`,tp13:`<b>Chicken and Egg</b>`,q13:`What experience helped you develop empathy and compassion?`,tp14:`<b>Plastic Pollution</b>`,q14:`Why is medical ethics important in practice?`,tp15:`<b>Ocean Currents</b>`,q15:`How do you handle stress and pressure under deadlines?`,tp16:`<b>Brains</b>`,q16:`Give an example of leadership or teamwork.`,tp17:`<b>Marmosets</b>`,q17:`How do you solve problems with limited information?`,tp18:`<b>Antarctica</b>`,q18:`Describe a time you took initiative in a difficult situation.`,tp19:`<b>Diamonds</b>`,q19:`How do you take criticism and turn it into growth?`,tp20:`<b>Fire Ants</b>`,q20:`How do you resolve conflict within a group or team?`,tp21:`<b>Money Worries</b>`,q21:`What is your greatest strength and how will you use it in medicine?`,tp22:`<b>Easter Eggs</b>`,q22:`Why is excellent patient communication important for a doctor?`,tp23:`<b>Dopamine and Love</b>`,q23:`As a future clinician, how do you envision communicating with patients?`,tp24:`<b>A.I. Love</b>`,q24:`What is the biggest ethical issue facing modern medicine?`,tp25:`<b>Medicinal Plants</b>`,q25:`How would you treat a patient refusing care due to personal beliefs?`,tp26:`<b>The Travel Bug</b>`,q26:`What are your views on medical research involving animal or human trials?`,tp27:`<b>Text Abbreviation</b>`,q27:`How should medicine address the social determinants of health?`,tp28:`<b>Solar Eclipse</b>`,q28:`Do you think healthcare should be a basic right for everyone?`,tp29:`<b>Internet Access</b>`,q29:`How do you view the impact of technology (AI, telemedicine)?`,tp30:`<b>Violence against Women</b>`,q30:`How would you care for patients from different cultural and socioeconomic backgrounds?`,}, ja:{heroStd:`プリメド英語学習の<b>新しい標準</b>。`,heroProof:`<span style="color:#1A7A6A;font-weight:700;">✓</span> <b style="color:#0B2545;font-weight:600;">2025・2026年 連続合格実績</b> <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 2027年度生 受講中 <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 少人数・累計32名（2024年12月〜）`,whyCap:`すべての道は、確かな基礎から始まります。`,dgPrep:`事前準備`,dgTrain:`セッション訓練`,dgAnalyze:`LLR分析`,dgImprove:`継続最適化`,dgCenter:`毎セッション反復`,cycCap:`毎セッション繰り返される4段階 — 学生は同じ場所に留まらず、毎回一歩ずつ深く進みます。`,llrLabel:`LLR · 5つの分析領域`,philoQuote:`「学びを止めず、人をつなぎ、持続可能な価値を生み出す。」`,qrCapT:`KakaoTalk相談`,qrCapS:`QRスキャンですぐにつながります`,
+tp01:`<b>Eco-anxiety</b>`,q01:`Why do you want to study medicine?`,tp02:`<b>Seafood &amp; 'Forever Chemicals'</b>`,q02:`What led you to apply to a pre-med program?`,tp03:`<b>New Nasal Spray for Allergic Reactions</b>`,q03:`What experience influenced your choice to pursue medicine?`,tp04:`<b>Third State Beyond Life and Death</b>`,q04:`As a doctor, what difference do you think you can make in people's lives?`,tp05:`<b>Eye Colour Change Surgery</b>`,q05:`What is the most important quality of a good doctor?`,tp06:`<b>Deadly Mpox Virus Spreads</b>`,q06:`What part of medicine are you most passionate about?`,tp07:`<b>Cycling Is Good for Your Knees</b>`,q07:`How do you plan to contribute to the medical field?`,tp08:`<b>Men Sleep Better Than Women</b>`,q08:`How would you explain your motivation to work in healthcare?`,tp09:`<b>Nature Reduces Anxiety</b>`,q09:`How do you overcome difficult academic situations?`,tp10:`<b>Standing on One Leg &amp; Ageing</b>`,q10:`How do you manage your time systematically under a heavy workload?`,tp11:`<b>Weight Loss</b>`,q11:`Tell me about a tough academic challenge you overcame.`,tp12:`<b>Cold Weather Exercise</b>`,q12:`Why are biology, chemistry and physics important for a medical career?`,tp13:`<b>Chicken and Egg</b>`,q13:`What experience helped you develop empathy and compassion?`,tp14:`<b>Plastic Pollution</b>`,q14:`Why is medical ethics important in practice?`,tp15:`<b>Ocean Currents</b>`,q15:`How do you handle stress and pressure under deadlines?`,tp16:`<b>Brains</b>`,q16:`Give an example of leadership or teamwork.`,tp17:`<b>Marmosets</b>`,q17:`How do you solve problems with limited information?`,tp18:`<b>Antarctica</b>`,q18:`Describe a time you took initiative in a difficult situation.`,tp19:`<b>Diamonds</b>`,q19:`How do you take criticism and turn it into growth?`,tp20:`<b>Fire Ants</b>`,q20:`How do you resolve conflict within a group or team?`,tp21:`<b>Money Worries</b>`,q21:`What is your greatest strength and how will you use it in medicine?`,tp22:`<b>Easter Eggs</b>`,q22:`Why is excellent patient communication important for a doctor?`,tp23:`<b>Dopamine and Love</b>`,q23:`As a future clinician, how do you envision communicating with patients?`,tp24:`<b>A.I. Love</b>`,q24:`What is the biggest ethical issue facing modern medicine?`,tp25:`<b>Medicinal Plants</b>`,q25:`How would you treat a patient refusing care due to personal beliefs?`,tp26:`<b>The Travel Bug</b>`,q26:`What are your views on medical research involving animal or human trials?`,tp27:`<b>Text Abbreviation</b>`,q27:`How should medicine address the social determinants of health?`,tp28:`<b>Solar Eclipse</b>`,q28:`Do you think healthcare should be a basic right for everyone?`,tp29:`<b>Internet Access</b>`,q29:`How do you view the impact of technology (AI, telemedicine)?`,tp30:`<b>Violence against Women</b>`,q30:`How would you care for patients from different cultural and socioeconomic backgrounds?`,}, ja:{nlTitle:`LYVONニュースレター`,nlDesc:`プレメド英語と医学部受験のヒント・ガイド・インサイトを定期的にメールでお届けします。`,nlBtn:`登録する →`,nlNote:`ご質問がありますか? <a href="mailto:hello@lyvon.io">お気軽にお問い合わせください</a>`,nlDone:`メールアプリが開きました — 送信すると登録が完了します。`,ecoLY:`LYVON(システムハブ)`,ecoMB:`MedBridge(コミュニケーション基礎)`,ecoMP:`MedPath(入試深化)`,ecoMC:`MedConnect(メンバーシップ)`,heroStd:`プリメド英語学習の<b>新しい標準</b>。`,heroProof:`<span style="color:#1A7A6A;font-weight:700;">✓</span> <b style="color:#0B2545;font-weight:600;">2025・2026年 連続合格実績</b> <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 2027年度生 受講中 <span style="color:rgba(11,37,69,.28);margin:0 5px;">·</span> 少人数・累計32名（2024年12月〜）`,whyCap:`すべての道は、確かな基礎から始まります。`,dgPrep:`事前準備`,dgTrain:`セッション訓練`,dgAnalyze:`LLR分析`,dgImprove:`継続最適化`,dgCenter:`毎セッション反復`,cycCap:`毎セッション繰り返される4段階 — 学生は同じ場所に留まらず、毎回一歩ずつ深く進みます。`,llrLabel:`LLR · 5つの分析領域`,philoQuote:`「学びを止めず、人をつなぎ、持続可能な価値を生み出す。」`,qrCapT:`KakaoTalk相談`,qrCapS:`QRスキャンですぐにつながります`,
 navCta:`カカオトーク相談`,
 heroKr:`プレメド学生のための英語スピーキング<br><b>MedBridge 101 · 30トピック完成カリキュラム</b>`,
 heroLead:`MedBridge 101はLYVON学習経路の<b>コミュニケーション基礎段階</b>です。30のトピックを通じて、医学を英語で暗記するのではなく——<b>英語で話す力</b>を身につけます。すべてのトピックは固定された50分の流れで進み、<b>実際の医学部面接の質問</b>1つと組み合わされます。`,
@@ -912,6 +943,17 @@ const navLinks=document.getElementById('navLinks');
 if(navToggle&&navLinks){
   navToggle.addEventListener('click',()=>{navLinks.classList.toggle('open');navToggle.classList.toggle('open');});
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');navToggle.classList.remove('open');}));
+}
+</script>
+<script>
+function lyvonSubscribe(){
+  var el=document.getElementById('nlEmail'); var v=(el.value||'').trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){ el.style.borderColor='#C0392B'; el.focus(); return; }
+  var subj=encodeURIComponent('LYVON 뉴스레터 구독 신청');
+  var body=encodeURIComponent('구독 신청 이메일: '+v);
+  window.location.href='mailto:hello@lyvon.io?subject='+subj+'&body='+body;
+  document.getElementById('nlForm').style.display='none';
+  document.getElementById('nlDone').style.display='block';
 }
 </script>
 </body>
