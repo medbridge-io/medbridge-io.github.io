@@ -288,6 +288,13 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
 .nl-note a{color:var(--teal);font-weight:600;text-decoration:none;border-bottom:1px solid rgba(26,122,106,.4);}
 @media(max-width:560px){.nl-card{padding:38px 24px;}.nl-form{flex-direction:column;}.nl-title{font-size:25px;}}
 .foot-eco-soon{display:block;font-size:13px;color:rgba(255,255,255,.42);margin-bottom:9px;}
+@media(max-width:900px){
+  .switch{display:grid !important;grid-template-columns:1fr 1fr;width:100%;}
+  .switch a{flex:none !important;}
+  .switch a+a{border-left:none;}
+  .switch a:nth-child(2n){border-left:1px solid rgba(11,37,69,.12);}
+  .switch a:nth-child(n+3){border-top:1px solid rgba(11,37,69,.12);}
+}
 </style>
 </head>
 <body>
@@ -303,6 +310,7 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
         <a href="https://lyvon.io">LYVON</a>
         <a href="#top" class="active">MedBridge</a>
         <a href="https://medpathglobal.io?utm_source=medbridge&utm_medium=nav">MedPath</a>
+        <a href="https://lyvon.io/medconnect/?utm_source=medbridge&utm_medium=nav">MedConnect</a>
       </div>
       <div class="lang-switch" id="langSwitch">
         <button data-lang="ko" class="active">KO</button>
@@ -738,7 +746,7 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
       <div class="foot-brand"><div class="mark">Med<b>Bridge</b></div><p data-i18n="footBrandP">Your Bridge to Medical School. 의학 영어를 말하게 만드는 LYVON Medical의 커뮤니케이션 기초 과정입니다.</p>
         <p style="font-size:12.5px;margin-top:14px;line-height:1.8;">Contact:&nbsp;<a href="mailto:hello@medbridgeedu.io" style="color:var(--teal-dark);text-decoration:none;font-weight:700;">hello@medbridgeedu.io</a></p></div>
       <div class="foot-col"><h5>CURRICULUM</h5><a href="#curriculum" data-i18n="fc1a1">30개 토픽 · 3 세트</a><a href="#pathway" data-i18n="fc1a2">LYVON 학습 경로</a><a href="#top" data-i18n="fc1a3">세션 구조</a></div>
-      <div class="foot-col"><h5>LYVON ECOSYSTEM</h5><a href="https://lyvon.io" data-i18n="ecoLY">LYVON (시스템 허브)</a><a href="#top" data-i18n="ecoMB">MedBridge (커뮤니케이션 기초)</a><a href="https://medpathglobal.io?utm_source=medbridge&utm_medium=footer" data-i18n="ecoMP">MedPath (입시 심화)</a><span class="foot-eco-soon" data-i18n="ecoMC">MedConnect (멤버십)</span></div>
+      <div class="foot-col"><h5>LYVON ECOSYSTEM</h5><a href="https://lyvon.io" data-i18n="ecoLY">LYVON (시스템 허브)</a><a href="#top" data-i18n="ecoMB">MedBridge (커뮤니케이션 기초)</a><a href="https://medpathglobal.io?utm_source=medbridge&utm_medium=footer" data-i18n="ecoMP">MedPath (입시 심화)</a><a href="https://lyvon.io/medconnect/?utm_source=medbridge&utm_medium=footer" data-i18n="ecoMC">MedConnect (멤버십)</a></div>
       <div class="foot-col"><h5>CONTACT</h5><a href="https://open.kakao.com/o/sh3TzOsi" target="_blank" rel="noopener" data-i18n="fc3a1">카카오톡 상담</a><a href="https://docs.google.com/forms/d/e/1FAIpQLScrFb1WOfgQ02_P_LHLHajRiiI6M7aFgCYo7dc1c6TcsnRLnQ/viewform" target="_blank" rel="noopener" data-i18n="fc3a2">무료 체험 신청</a></div>
     </div>
     <div class="foot-bottom">
