@@ -114,7 +114,7 @@ section{padding:84px 0;}
 
 /* PATHWAY ladder */
 .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch;}
-.rung{background:var(--cream-l);border:1px solid var(--border);border-top:3px solid var(--navy-40);border-radius:12px;padding:22px;display:flex;flex-direction:column;}
+.rung{background:var(--cream-l);border:1px solid var(--border);border-top:3px solid var(--navy-40);border-radius:12px;padding:22px;display:flex;flex-direction:column;;transition:transform .2s ease,box-shadow .2s ease;cursor:default;}
 .rung.cur{border-top-color:var(--teal);box-shadow:0 14px 34px rgba(26,122,106,.18);}
 .rung .rk{font-family:var(--en);font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--teal-d);margin-bottom:8px;}
 .rung .rn{font-family:var(--serif);font-size:20px;font-weight:600;margin-bottom:3px;}
@@ -168,7 +168,7 @@ table.idx tr:hover{background:var(--cream-l);}
 
 /* criteria + goals */
 .crit{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.crit-card{background:var(--cream-l);border:1px solid var(--border);border-top:3px solid var(--teal);border-radius:12px;padding:22px;}
+.crit-card{background:var(--cream-l);border:1px solid var(--border);border-top:3px solid var(--teal);border-radius:12px;padding:22px;transition:transform .2s ease,box-shadow .2s ease,border-top-width .2s ease;cursor:default;}
 .crit-card .ck{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.08em;color:var(--teal-d);margin-bottom:6px;}
 .crit-card h4{font-size:16px;font-weight:700;margin-bottom:8px;}
 .crit-card p{font-size:12.5px;color:var(--navy-82);line-height:1.6;}
@@ -180,7 +180,7 @@ table.idx tr:hover{background:var(--cream-l);}
 
 /* cycle */
 .cycle{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
-.cyc{background:var(--cream-l);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;min-width:0;overflow-wrap:break-word;}
+.cyc{background:var(--cream-l);border:1px solid var(--border);border-radius:14px;padding:24px;position:relative;min-width:0;overflow-wrap:break-word;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease;cursor:default;}
 .cyc .cn{font-family:var(--en);font-size:12px;font-weight:700;color:#fff;background:var(--teal);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
 .cyc h4{font-family:var(--en);font-size:14px;font-weight:700;letter-spacing:.04em;margin-bottom:3px;}
 .cyc .ct{font-size:11.5px;color:var(--teal-d);font-weight:700;margin-bottom:12px;}
@@ -340,6 +340,19 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
 .guide-banner:hover{background:#15655A;color:#fff;}
 .guide-banner .gb-label{opacity:.72;font-weight:500;margin-right:6px;font-size:12px;}
 @media(max-width:560px){.guide-banner{font-size:12px;height:36px;line-height:36px;}}
+
+.rung:hover{transform:translateY(-4px);box-shadow:0 14px 28px rgba(11,37,69,.1);}
+.rung.cur:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(26,122,106,.22);}
+.philo-item:hover{transform:translateY(-4px);box-shadow:0 12px 28px rgba(0,0,0,.18);}
+@media(max-width:600px){
+  .rung:hover,.philo-item:hover{transform:translateY(-3px);}
+}
+
+.crit-card:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(26,122,106,.14);border-top-width:5px;}
+.cyc:hover{transform:translateY(-5px);box-shadow:0 14px 28px rgba(26,122,106,.14);border-color:rgba(26,122,106,.35);}
+@media(max-width:600px){
+  .crit-card:hover,.cyc:hover{transform:translateY(-3px);}
+}
 </style>
 </head>
 <body>
@@ -468,7 +481,7 @@ html[lang="ja"] body{font-family:'Noto Sans JP','Noto Sans KR','Inter',sans-seri
       <h2 style="color:#fff;" data-i18n="philoH2">암기가 아니라, <span style="color:var(--teal-dark);">말하기.</span></h2>
     </div>
     <div class="philo-grid reveal">
-      <div class="philo-item"><h4>INPUT → OUTPUT</h4><div class="big" data-i18n="philo1big">출력의 힘</div><p data-i18n="philo1p">기존 교육은 암기·독해·문제풀이 같은 Input에 집중합니다. 그러나 면접·토론·발표에서 필요한 건 생각을 실시간으로 구조화해 표현하는 Output입니다.</p></div>
+      <div class="philo-item"><h4>INPUT → OUTPUT</h4><div class="big" data-i18n="philo1big">Output의 힘</div><p data-i18n="philo1p">기존 교육은 암기·독해·문제풀이 같은 Input에 집중합니다. 그러나 면접·토론·발표에서 필요한 건 생각을 실시간으로 구조화해 표현하는 Output입니다.</p></div>
       <div class="philo-item"><h4>LYVON = LIVE ON</h4><div class="big" data-i18n="philo2big">평생 남는 자산</div><p data-i18n="philo2p">시험을 위해 외운 영어는 잊힙니다. 사고하고 표현하는 능력은 학생의 평생 자산이 되어 — 의대 이후에도 계속 살아남습니다(Live On).</p></div>
       <div class="philo-item"><h4>PREP FRAMEWORK</h4><div class="big" data-i18n="philo3big">구조가 유창함을 만든다</div><p data-i18n="philo3p">주장(Point) → 근거(Reason) → 예시(Example) → 정리(Point). 모든 답변을 이 구조 위에 훈련해, 막힘없는 면접 스피킹으로 완성합니다.</p></div>
     </div>
