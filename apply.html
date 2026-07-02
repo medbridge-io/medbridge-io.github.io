@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MedBridge · 트라이얼 신청</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0;}
+:root{--navy:#0B2545;--accent:#1A7A6A;--accent_d:#15655A;--accent_l:#E3F5F0;--cream:#F5EFE4;--cream-l:#FCFBF7;--border:rgba(11,37,69,.1);--en:'Inter',sans-serif;}
+html{font-family:var(--en);background:var(--cream-l);color:var(--navy);-webkit-text-size-adjust:100%;}
+body{min-height:100vh;display:flex;flex-direction:column;}
+.guide-banner{position:fixed;top:0;left:0;right:0;z-index:200;display:block;width:100%;background:var(--accent);color:#fff;text-align:center;height:40px;line-height:40px;font-size:13px;font-weight:600;letter-spacing:.02em;text-decoration:none;transition:background .2s;}
+.guide-banner:hover{background:var(--accent_d);color:#fff;}
+.guide-banner .gb-label{opacity:.72;font-weight:500;margin-right:6px;font-size:12px;}
+nav{position:fixed;top:40px;left:0;right:0;z-index:100;background:rgba(252,251,247,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+.nav-in{max-width:1080px;margin:0 auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;}
+.mark{font-size:22px;font-weight:900;color:var(--navy);letter-spacing:.04em;display:block;}
+.kicker{font-size:10px;font-weight:600;letter-spacing:.12em;color:rgba(11,37,69,.5);margin-top:1px;display:block;}
+.lang-sw{display:flex;gap:4px;}
+.lang-sw button{background:none;border:1px solid var(--border);border-radius:6px;padding:4px 10px;font-size:12px;font-weight:600;color:rgba(11,37,69,.5);cursor:pointer;font-family:var(--en);}
+.lang-sw button.active{background:var(--navy);color:#fff;border-color:var(--navy);}
+.nav-home{font-size:12.5px;color:rgba(11,37,69,.55);text-decoration:none;font-weight:500;margin-right:12px;}
+.nav-home:hover{color:var(--navy);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.hero{flex:1;display:flex;align-items:center;justify-content:center;padding:140px 24px 80px;}
+.hero-inner{max-width:560px;width:100%;text-align:center;}
+.hero-eyebrow{font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--accent);margin-bottom:20px;text-transform:uppercase;}
+.hero-title{font-size:clamp(28px,4.5vw,46px);font-weight:900;color:var(--navy);line-height:1.2;margin-bottom:16px;letter-spacing:-.01em;word-break:keep-all;}
+.hero-desc{font-size:15px;color:rgba(11,37,69,.65);line-height:1.7;margin-bottom:40px;word-break:keep-all;}
+.btn-apply{display:inline-block;background:var(--accent);color:#fff;font-size:16px;font-weight:700;padding:16px 40px;border-radius:12px;text-decoration:none;transition:background .2s,transform .2s;letter-spacing:.01em;}
+.btn-apply:hover{background:var(--accent_d);transform:translateY(-2px);}
+.note{font-size:12px;color:rgba(11,37,69,.4);margin-top:16px;word-break:keep-all;}
+.features{background:var(--cream);border-top:1px solid var(--border);padding:60px 24px;}
+.features-inner{max-width:800px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:20px;}
+.feat{background:var(--cream-l);border:1px solid var(--border);border-top:3px solid var(--accent);border-radius:12px;padding:20px;}
+.feat-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.feat-desc{font-size:12.5px;color:rgba(11,37,69,.6);line-height:1.6;word-break:keep-all;}
+footer{background:var(--navy);color:rgba(255,255,255,.5);text-align:center;padding:24px;font-size:12px;}
+footer a{color:rgba(255,255,255,.4);text-decoration:none;}
+footer a:hover{color:#fff;}
+@media(max-width:560px){
+  .nav-in{padding:12px 16px;flex-wrap:wrap;gap:8px;}
+  .hero{padding:150px 20px 60px;}
+  .btn-apply{padding:14px 28px;font-size:15px;width:100%;text-align:center;}
+}
+</style>
+</head>
+<body>
+<a href="https://drive.google.com/drive/folders/1dyH7LQnKzhB4FqKo7yaoEynBpm0zycVq" target="_blank" rel="noopener" class="guide-banner"><span class="gb-label">FREE</span><span data-i18n="guideBanner">LYVON Welcome Guide 받기 →</span></a>
+<nav>
+  <div class="nav-in">
+    <a href="https://medbridgeedu.io" style="text-decoration:none;">
+      <span class="mark">Med<b style="color:#1A7A6A">Bridge</b></span>
+      <span class="kicker">LYVON MEDICAL</span>
+    </a>
+    <div class="nav-right">
+      <a href="https://medbridgeedu.io" class="nav-home" data-i18n="navHome">← 홈으로</a>
+      <div class="lang-sw">
+        <button data-lang="ko" class="active" onclick="setLang('ko')">KO</button>
+        <button data-lang="en" onclick="setLang('en')">EN</button>
+        <button data-lang="ja" onclick="setLang('ja')">日本語</button>
+      </div>
+    </div>
+  </div>
+</nav>
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow" data-i18n="eyebrow">MEDBRIDGE · 트라이얼 신청</div>
+    <h1 class="hero-title" data-i18n="title">의학 영어, 입을 여는 준비</h1>
+    <p class="hero-desc" data-i18n="desc">어휘·발음·기본 문장 구조를 익히고 소리 내어 말하는 습관을 만듭니다. 3개월 · 주 2~4회 · 30개 토픽.</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd5jR5X_jWDUacKKW9dfSQ7_wBLY6kGF2kPV2OZwOB81jbgbw/viewform?usp=pp_url&entry.795766530=MedBridge+%E2%80%94+%EC%9D%98%ED%95%99+%EC%98%81%EC%96%B4+%EC%9E%85%EB%AC%B8%C2%B7%EA%B8%B0%EC%B4%88" target="_blank" rel="noopener" class="btn-apply" data-i18n="btn">트라이얼 신청 →</a>
+    <p class="note" data-i18n="note">신청 후 영업일 기준 1~2일 내 카카오톡 또는 이메일로 연락드립니다.</p>
+  </div>
+</section>
+<section class="features">
+  <div class="features-inner">
+    <div class="feat"><div class="feat-title" data-i18n="f1t">30개 핵심 토픽</div><div class="feat-desc" data-i18n="f1d">의학 영어 어휘·발음·기본 문장 구조를 3세트로 완성합니다.</div></div>
+    <div class="feat"><div class="feat-title" data-i18n="f2t">주 2~4회 선택</div><div class="feat-desc" data-i18n="f2d">생활 패턴에 맞게 수업 빈도를 선택할 수 있습니다.</div></div>
+    <div class="feat"><div class="feat-title" data-i18n="f3t">1:1 실시간 세션</div><div class="feat-desc" data-i18n="f3d">강사와 1:1로 진행하는 구술 중심 수업입니다.</div></div>
+    <div class="feat"><div class="feat-title" data-i18n="f4t">LLR 분석 리포트</div><div class="feat-desc" data-i18n="f4d">매 수업 후 발음·유창성·어휘·전달력을 분석합니다.</div></div>
+  </div>
+</section>
+<footer>
+  <a href="https://medbridgeedu.io">MedBridge</a> · <a href="legal.html#privacy">개인정보처리방침</a> · <a href="legal.html#terms">이용약관</a><br>
+  © 2024–2026 LYVON
+</footer>
+<script>
+const i18n = {"eyebrow": {"ko": "MEDBRIDGE · 트라이얼 신청", "en": "MEDBRIDGE · TRIAL APPLICATION", "ja": "MEDBRIDGE · トライアル申し込み"}, "title": {"ko": "의학 영어, 입을 여는 준비", "en": "Medical English — Start speaking", "ja": "医学英語で、話し始める準備"}, "desc": {"ko": "어휘·발음·기본 문장 구조를 익히고 소리 내어 말하는 습관을 만듭니다. 3개월 · 주 2~4회 · 30개 토픽.", "en": "Build vocabulary, pronunciation, and sentence patterns. 3 months · 2–4×/week · 30 topics.", "ja": "語彙・発音・文構造を習得し、英語で話す習慣を作ります。3か月 · 週2〜4回 · 30トピック。"}, "btn": {"ko": "트라이얼 신청 →", "en": "Apply for a Trial →", "ja": "トライアルを申し込む →"}, "note": {"ko": "신청 후 영업일 기준 1~2일 내 카카오톡 또는 이메일로 연락드립니다.", "en": "We'll contact you within 1–2 business days via KakaoTalk or email.", "ja": "申し込み後、1〜2営業日以内にKakaoTalkまたはメールでご連絡します。"}, "navHome": {"ko": "← 홈으로", "en": "← Home", "ja": "← ホーム"}, "guideBanner": {"ko": "LYVON Welcome Guide 받기 →", "en": "Get the LYVON Welcome Guide →", "ja": "LYVON Welcome Guide を受け取る →"}, "f1t": {"ko": "30개 핵심 토픽", "en": "30 core topics", "ja": "30のコアトピック"}, "f1d": {"ko": "의학 영어 어휘·발음·기본 문장 구조를 3세트로 완성합니다.", "en": "Complete medical English vocabulary, pronunciation, and structure in 3 sets.", "ja": "医学英語の語彙・発音・文構造を3セットで完成します。"}, "f2t": {"ko": "주 2~4회 선택", "en": "2–4×/week", "ja": "週2〜4回選択"}, "f2d": {"ko": "생활 패턴에 맞게 수업 빈도를 선택할 수 있습니다.", "en": "Choose your session frequency to fit your schedule.", "ja": "生活スタイルに合わせて授業頻度を選択できます。"}, "f3t": {"ko": "1:1 실시간 세션", "en": "1:1 live session", "ja": "1対1ライブセッション"}, "f3d": {"ko": "강사와 1:1로 진행하는 구술 중심 수업입니다.", "en": "Oral-focused sessions conducted 1:1 with an instructor.", "ja": "講師との1対1で行う口述中心の授業です。"}, "f4t": {"ko": "LLR 분석 리포트", "en": "LLR analysis report", "ja": "LLR分析レポート"}, "f4d": {"ko": "매 수업 후 발음·유창성·어휘·전달력을 분석합니다.", "en": "Pronunciation, fluency, vocabulary, and delivery analyzed after every session.", "ja": "毎授業後に発音・流暢さ・語彙・伝達力を分析します。"}};
+function setLang(lang) {
+  document.documentElement.lang = lang;
+  document.querySelectorAll('[data-lang]').forEach(b => b.classList.toggle('active', b.dataset.lang === lang));
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (i18n[key] && i18n[key][lang]) el.textContent = i18n[key][lang];
+  });
+  const btn = document.querySelector('.btn-apply');
+  if (btn && i18n.btn && i18n.btn[lang]) btn.textContent = i18n.btn[lang];
+}
+const nav = navigator.language || 'ko';
+const lang = nav.startsWith('ja') ? 'ja' : nav.startsWith('ko') ? 'ko' : 'en';
+if (lang !== 'ko') setLang(lang);
+</script>
+</body>
+</html>
